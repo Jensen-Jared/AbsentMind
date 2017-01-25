@@ -15,7 +15,16 @@ public class AbsentMind {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Player playerOne = new Player();
+        
+        playerOne.setName("John Doe");
+        playerOne.setBestTime(7.00);
+        playerOne.setEndingType("You died.");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+        
     }
     
 }
