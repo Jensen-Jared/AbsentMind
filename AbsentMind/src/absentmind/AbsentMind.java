@@ -25,15 +25,26 @@ public class AbsentMind {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
-        Game game = new Game();
+        Map map = new Map();
         
-        game.setCurrentRow(2);
-        game.setCurrentColumn(5);
-        game.setTimeExpired(12);
-        game.setTimeRemaining(57);
+        map.setMapType("subway");
+        map.setColumnCount(9);
+        map.setRowCount(4);
+        map.setCurrentColumn(0);
+        map.setCurrentRow(0);
+        map.setCurrentScene(0);
         
-        String gameInfo = game.toString();
-        System.out.println(gameInfo);
+        String mapInfo = map.toString();
+        System.out.println(mapInfo);
+        
+        Location here = new Location();
+        
+        here.setRow(1);
+        here.setColumn(1);
+        here.setVisited("Y");
+        
+        String Here = here.toString();
+        System.out.println(Here);
         
         
     }
