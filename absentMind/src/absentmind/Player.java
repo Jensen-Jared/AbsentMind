@@ -55,6 +55,11 @@ public class Player implements Serializable{
         hash = 53 * hash + Objects.hashCode(this.endingType);
         return hash;
     }
+    
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", endingType=" + endingType + '}';
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -74,16 +79,10 @@ public class Player implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.endingType, other.endingType)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.endingType, other.endingType);
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", endingType=" + endingType + '}';
-    }
+    
     
     
     
