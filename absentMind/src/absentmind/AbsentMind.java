@@ -25,6 +25,28 @@ public class AbsentMind {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        Clue newClue = new Clue();
+        
+        newClue.setClueName("Sword");
+        newClue.setClueType("Weapon");
+        newClue.setDescription("A samurai sword left behind.");
+        
+        String clueInfo = newClue.toString();
+        System.out.println(clueInfo);
+        
+        Scene newScene = new Scene();
+        
+        newScene.setDescription("The first car of the subway");
+        newScene.setTravelTime(25);
+        newScene.setUpdateDescription("There is an old woman staring at you intently.");
+        newScene.setNonPlayableCharacter("Old Lady");
+        newScene.setClueLocation("Shoe");
+        newScene.setInteractions("Jump out of Train");
+        newScene.setDisplaySymbol("ASCII Art");
+        
+        String sceneInfo = newScene.toString();
+        System.out.println(sceneInfo);
+        
         Map map = new Map();
         
         map.setMapType("subway");
