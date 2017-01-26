@@ -68,6 +68,23 @@ public class AbsentMind {
         String Here = here.toString();
         System.out.println(Here);
         
+        KeyItem keyItem = new KeyItem();
+        
+        keyItem.setKeyItemType("Key");
+        keyItem.setDescription("rusty skeleton key");
+        
+        String myItem = keyItem.toString();
+        System.out.println(myItem);
+        
+        NonPlayableCharacter npcOne = new NonPlayableCharacter();
+        
+        npcOne.setNpcDescription("Tall, slender chef with a fat, bulbous nose.");
+        npcOne.setName("Gaston");
+        npcOne.setDialogue("Here, have a crossant!");
+        npcOne.setNpcClue("You bite down, nearly breaking your teeth on what appears to be a rusty skeleton key.");
+        
+        String npcInfo = npcOne.toString();
+        System.out.println(npcInfo);
         
     }
     
