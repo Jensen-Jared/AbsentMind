@@ -14,11 +14,18 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     
-    private double row;
-    private double column;
+    private String scene;
     private String visited;
 
     public Location() {
+    }
+
+    public String getScene() {
+        return scene;
+    }
+
+    public void setScene(String scene) {
+        this.scene = scene;
     }
 
     public double getRow() {

@@ -12,12 +12,28 @@ import java.io.Serializable;
  * @author David
  */
 public class Game implements Serializable{
-    private double currentRow;
-    private double currentColumn;
+    private String map;
+    private String player;
     private double timeExpired;
     private double timeRemaining;
 
     public Game() {
+    }
+
+    public String getMap() {
+        return map;
+    }
+
+    public void setMap(String map) {
+        this.map = map;
+    }
+
+    public String getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(String player) {
+        this.player = player;
     }
     
     public double getCurrentRow() {
@@ -50,6 +66,11 @@ public class Game implements Serializable{
 
     public void setTimeRemaining(double timeRemaining) {
         this.timeRemaining = timeRemaining;
+    }
+
+    public Game(String map, String player) {
+        this.map = map;
+        this.player = player;
     }
 
     @Override
