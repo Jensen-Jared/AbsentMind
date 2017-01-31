@@ -19,6 +19,8 @@ public class Location implements Serializable {
 
     public Location() {
     }
+    
+    
 
     public String getScene() {
         return scene;
@@ -26,22 +28,6 @@ public class Location implements Serializable {
 
     public void setScene(String scene) {
         this.scene = scene;
-    }
-
-    public double getRow() {
-        return row;
-    }
-
-    public void setRow(double row) {
-        this.row = row;
-    }
-
-    public double getColumn() {
-        return column;
-    }
-
-    public void setColumn(double column) {
-        this.column = column;
     }
 
     public String getVisited() {
@@ -54,16 +40,15 @@ public class Location implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
-        hash = 41 * hash + Objects.hashCode(this.visited);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.scene);
+        hash = 97 * hash + Objects.hashCode(this.visited);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+        return "Location{" + "scene=" + scene + ", visited=" + visited + '}';
     }
 
     
@@ -79,10 +64,7 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         if (!Objects.equals(this.visited, other.visited)) {
@@ -90,6 +72,6 @@ public class Location implements Serializable {
         }
         return true;
     }
-    
+
     
 }

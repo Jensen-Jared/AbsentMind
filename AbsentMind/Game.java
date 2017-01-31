@@ -6,6 +6,7 @@
 package absentmind;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Game implements Serializable{
     public Game() {
     }
 
+    
     public String getMap() {
         return map;
     }
@@ -34,22 +36,6 @@ public class Game implements Serializable{
 
     public void setPlayer(String player) {
         this.player = player;
-    }
-    
-    public double getCurrentRow() {
-        return currentRow;
-    }
-
-    public void setCurrentRow(double currentRow) {
-        this.currentRow = currentRow;
-    }
-
-    public double getCurrentColumn() {
-        return currentColumn;
-    }
-
-    public void setCurrentColumn(double currentColumn) {
-        this.currentColumn = currentColumn;
     }
 
     public double getTimeExpired() {
@@ -68,26 +54,22 @@ public class Game implements Serializable{
         this.timeRemaining = timeRemaining;
     }
 
-    public Game(String map, String player) {
-        this.map = map;
-        this.player = player;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.currentRow) ^ (Double.doubleToLongBits(this.currentRow) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.currentColumn) ^ (Double.doubleToLongBits(this.currentColumn) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.timeExpired) ^ (Double.doubleToLongBits(this.timeExpired) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.timeRemaining) ^ (Double.doubleToLongBits(this.timeRemaining) >>> 32));
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.map);
+        hash = 89 * hash + Objects.hashCode(this.player);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.timeExpired) ^ (Double.doubleToLongBits(this.timeExpired) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.timeRemaining) ^ (Double.doubleToLongBits(this.timeRemaining) >>> 32));
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", timeExpired=" + timeExpired + ", timeRemaining=" + timeRemaining + '}';
+        return "Game{" + "map=" + map + ", player=" + player + ", timeExpired=" + timeExpired + ", timeRemaining=" + timeRemaining + '}';
     }
 
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -100,22 +82,21 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.currentRow) != Double.doubleToLongBits(other.currentRow)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.currentColumn) != Double.doubleToLongBits(other.currentColumn)) {
-            return false;
-        }
         if (Double.doubleToLongBits(this.timeExpired) != Double.doubleToLongBits(other.timeExpired)) {
             return false;
         }
         if (Double.doubleToLongBits(this.timeRemaining) != Double.doubleToLongBits(other.timeRemaining)) {
             return false;
         }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
         return true;
     }
-    
-    
+
     
 }
 
