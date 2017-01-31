@@ -5,6 +5,14 @@
  */
 package absentmind;
 
+import Model.Location;
+import Model.Player;
+import Model.Scene;
+import Model.Clue;
+import Model.Map;
+import Model.NonPlayableCharacter;
+import Model.KeyItem;
+
 /**
  *
  * @author Josh
