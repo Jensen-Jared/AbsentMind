@@ -50,6 +50,7 @@ public class AbsentMind {
         newScene.setNonPlayableCharacter("Old Lady");
         newScene.setClueLocation("Shoe");
         newScene.setInteractions("Jump out of Train");
+        newScene.setSceneName("Subway Doors");
         newScene.setDisplaySymbol("ASCII Art");
         
         String sceneInfo = newScene.toString();

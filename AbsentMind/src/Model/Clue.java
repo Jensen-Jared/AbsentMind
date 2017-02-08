@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Josh
+ * @author Kailey
  */
 public class Clue implements Serializable{
     

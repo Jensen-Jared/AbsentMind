@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Josh
+ * @author Kailey
  */
 public class Scene implements Serializable{
     
@@ -20,8 +20,10 @@ public class Scene implements Serializable{
     private String nonPlayableCharacter;
     private String clueLocation;
     private String interactions;
+    private String sceneName;
     private String displaySymbol;
-
+    
+    
     public Scene() {
     }
     
@@ -75,6 +77,14 @@ public class Scene implements Serializable{
         this.interactions = interactions;
     }
 
+    public String getSceneName() {
+        return sceneName;
+    }
+
+    public void setSceneName(String sceneName) {
+        this.sceneName = sceneName;
+    }
+    
     public String getDisplaySymbol() {
         return displaySymbol;
     }
@@ -82,6 +92,8 @@ public class Scene implements Serializable{
     public void setDisplaySymbol(String displaySymbol) {
         this.displaySymbol = displaySymbol;
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -93,12 +105,13 @@ public class Scene implements Serializable{
         hash = 73 * hash + Objects.hashCode(this.clueLocation);
         hash = 73 * hash + Objects.hashCode(this.interactions);
         hash = 73 * hash + Objects.hashCode(this.displaySymbol);
+        hash = 73 * hash + Objects.hashCode(this.sceneName);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", updateDescription=" + updateDescription + ", nonPlayableCharacter=" + nonPlayableCharacter + ", clueLocation=" + clueLocation + ", interactions=" + interactions + ", displaySymbol=" + displaySymbol + '}';
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", updateDescription=" + updateDescription + ", nonPlayableCharacter=" + nonPlayableCharacter + ", clueLocation=" + clueLocation + ", interactions=" + interactions + ", sceneName=" + sceneName + ", displaySymbol=" + displaySymbol + '}';
     }
     
 
@@ -130,6 +143,9 @@ public class Scene implements Serializable{
             return false;
         }
         if (!Objects.equals(this.interactions, other.interactions)) {
+            return false;
+        }
+        if (!Objects.equals(this.sceneName, other.sceneName)) {
             return false;
         }
         return Objects.equals(this.displaySymbol, other.displaySymbol);
